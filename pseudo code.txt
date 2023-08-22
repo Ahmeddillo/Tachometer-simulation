@@ -1,0 +1,20 @@
+ALGORITHM: TACHOMETER OPERATION LOGIC
+
+START
+
+    SENSOR = New Sensor()
+    PREVIOUS_TIME = SENSOR.read()  // Get the time of the first reading
+
+    INFINITE LOOP:
+        CURRENT_TIME = SENSOR.read()  // Get the time of the next reading
+        TIME_DIFFERENCE = CURRENT_TIME - PREVIOUS_TIME
+        
+        IF TIME_DIFFERENCE > 0:  // If it's greater than zero
+            ROTATION_SPEED = 60 / TIME_DIFFERENCE
+            PRINT("Rotation Speed (RPM):", ROTATION_SPEED)
+        
+        PREVIOUS_TIME = CURRENT_TIME
+        
+    END LOOP
+
+END
